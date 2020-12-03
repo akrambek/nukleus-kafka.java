@@ -508,7 +508,7 @@ public final class KafkaCacheServerProduceFactory implements StreamFactory
                 state = 0;
             }
 
-            if (state == 0)
+            if (!KafkaState.initialOpening(state))
             {
                 if (KafkaConfiguration.DEBUG)
                 {

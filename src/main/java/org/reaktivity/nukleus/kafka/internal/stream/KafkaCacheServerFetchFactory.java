@@ -482,7 +482,7 @@ public final class KafkaCacheServerFetchFactory implements StreamFactory
                 state = 0;
             }
 
-            if (state == 0)
+            if (!KafkaState.initialOpening(state))
             {
                 doServerFanoutInitialBegin(traceId);
             }
